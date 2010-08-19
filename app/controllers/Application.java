@@ -13,9 +13,23 @@ public class Application extends Controller {
     }
     
     public static void add(@Valid Snippet snippet){
-      //TODO: check if exist
-      if(!validation.hasErrors())
-          snippet.save();
+
+      //We don't want to override existing snippets
+      snippet.id = null;
+      snippet.score = 0;
+      snippet.ident = snippet.ident.trim();
+
+      if(Snippet.exists(snippet.ident))
+        Validation.addError("snippet.ident", "This gist already exists");
+
+      if(!validation.hasErrors()) {
+        snippet.save();
+      }
+      else{
+        params.flash();
+        validation.keep();
+      }
+      
       index();
     }
     

@@ -2,7 +2,8 @@
   color: #333;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
+  font-family: Monaco, Arial;
 }
 
 h1{
@@ -55,4 +56,15 @@ iframe{
   border: none;
   width: inherit;
   height: inherit;
+}
+
+.error{
+  display: block;
+  color: black;
+  font-weight: bold;
+  background: #EA8687;
+  border: solid 2px #E76C6D;
+  padding: 1px 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }

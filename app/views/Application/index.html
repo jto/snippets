@@ -13,20 +13,21 @@
     #{/list}
   </ul>
 </div>
-<form action="@{Application.add()}" method="POST" accept-charset="utf-8">
+#{form @Application.add()}
   <h2>Add a snippet:</h2>
   <p>
+    #{ifError 'snippet.ident'}<span class="error">#{error 'snippet.ident' /}</span>#{/ifError}
     <label for="ident">Ident:</label>
-    <input type="text" name="snippet.ident" id="ident"/>
+    <input type="text" name="snippet.ident" id="ident" value="${flash['snippet.ident']}"/>
   </p>
   <p>
     <label for="desc">Description:</label>
-    <textarea name="snippet.description" rows="8" cols="40" id="desc"></textarea>
+    <textarea name="snippet.description" rows="8" cols="40" id="desc">${flash['snippet.description']}</textarea>
   </p>
   <p>
     <input type="submit" value="Add">
   </p>
-</form>
+#{/form}
 <div id="preview">
   <h2>Preview:</h2>
   <iframe src="" scrolling="no"></iframe>
