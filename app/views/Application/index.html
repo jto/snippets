@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Snippets' /}
+<h1>Play! snippets</h1>
+<div>
+  <ul>
+    #{list items:snippets, as:'s'}
+      <li>
+        <p>
+          ${s.description}
+        </p>
+        <script type="text/javascript" charset="utf-8" src="http://gist.github.com/${s.ident}.js"></script>
+      </li>
+    #{/list}
+  </ul>
+</div>
+<form action="@{Application.add()}" method="POST" accept-charset="utf-8">
+  <h2>Add a snippet:</h2>
+  <p>
+    <label for="ident">Ident:</label>
+    <input type="text" name="snippet.ident" id="ident"/>
+  </p>
+  <p>
+    <label for="desc">Description:</label>
+    <textarea name="snippet.description" rows="8" cols="40" id="desc"></textarea>
+  </p>
+  <p>
+    <input type="submit" value="Ajouter">
+  </p>
+</form>
+<div id="preview">
+  <h2>Preview:</h2>
+  <iframe src="" scrolling="no"></iframe>
+</div>
