@@ -68,3 +68,27 @@ iframe{
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
 }
+
+input[type=text]{
+  font-size: 2em;  
+}
+ /* http://www.smashingmagazine.com/2009/12/02/pushing-your-buttons-with-practical-css3/*/
+input[type=submit]{
+  padding: 10px 5px;
+  background: #E85730;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EA6440), to(#E5461B));;
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #AC3312;
+  position: relative;
+  cursor: pointer;
+}
